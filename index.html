@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karo Pitch | Startup Discovery Platform</title>
+    <meta name="description" content="Pitch your startup to India's top investors.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- ThreeJS & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+    <!-- Abstract WebGL Background -->
+    <canvas id="webgl-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Karo Pitch</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#startups" class="nav-link">Startups</a>
+                <a href="#investors" class="nav-link">Investors</a>
+                <a href="#apply" class="btn btn-primary btn-sm">Apply</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section-spacing">
+            <div class="container">
+                <div class="grid-2 align-center">
+                    <div class="hero-content text-left reveal-on-load">
+                        <h1 class="hero-title text-left">Pitch Your Startup to India's Top Investors.</h1>
+                        <p class="hero-subtitle mx-0">
+                            Karo Pitch is a platform where early-stage founders from across India can present their startups to investors, gain visibility, and raise funding.
+                        </p>
+                        <div class="hero-actions justify-start">
+                            <a href="#apply" class="btn btn-primary btn-large glow-hover">Apply to Pitch</a>
+                            <a href="#startups" class="btn btn-secondary btn-large">Explore Startups</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual reveal-on-load">
+                        <div class="img-container" style="height: 480px;">
+                            <img src="assets/hero_image.png" alt="Founder Pitching">
+                            <div class="img-overlay-heavy"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-spacing">
+            <div class="container scroll-reveal">
+                <div class="grid-2 align-center">
+                    <div class="img-container" style="height: 400px;">
+                        <img src="assets/about_image.png" alt="Startup founders collaborating">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div>
+                        <h2 class="section-title">About Karo Pitch</h2>
+                        <p class="section-description mt-2">
+                            We bridge the gap between visionary founders across India and the investors looking to fund the next big thing. Through our curated discovery platform, we give you the stage to showcase your traction, innovation, and potential directly to those who matter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section-spacing">
+            <div class="container scroll-reveal">
+                <h2 class="section-title text-center mb-8">How It Works</h2>
+                <div class="grid-4">
+                    <div class="card minimal-card">
+                        <div class="step-num">01</div>
+                        <h3>Submit Application</h3>
+                        <p class="text-sm">Provide your deck and key traction metrics.</p>
+                    </div>
+                    <div class="card minimal-card">
+                        <div class="step-num">02</div>
+                        <h3>Curation</h3>
+                        <p class="text-sm">Our team reviews and shortlists the best startups.</p>
+                    </div>
+                    <div class="card minimal-card">
+                        <div class="step-num">03</div>
+                        <h3>Investor Preview</h3>
+                        <p class="text-sm">Private access given to our investor network.</p>
+                    </div>
+                    <div class="card minimal-card">
+                        <div class="step-num">04</div>
+                        <h3>Pitch & Raise</h3>
+                        <p class="text-sm">Connect with investors and secure your funding.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Startup Categories -->
+        <section class="section-spacing border-top-subtle">
+            <div class="container scroll-reveal">
+                <h2 class="section-title text-center mb-8">Supported Categories</h2>
+                <div class="category-pills justify-center">
+                    <span class="badge badge-lg">D2C Brands</span>
+                    <span class="badge badge-lg">SaaS Startups</span>
+                    <span class="badge badge-lg">MSMEs</span>
+                    <span class="badge badge-lg">Manufacturing</span>
+                    <span class="badge badge-lg">Consumer Tech</span>
+                    <span class="badge badge-lg">Bharat-Focused</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Startups -->
+        <section id="startups" class="section-spacing">
+            <div class="container scroll-reveal">
+                <h2 class="section-title text-center mb-8">Featured Startups</h2>
+                <div class="grid-3">
+                    <div class="card interactive-card">
+                        <div class="img-container card-image">
+                            <img src="assets/startup_image.png" alt="Startup Founder working">
+                            <div class="img-overlay-heavy"></div>
+                        </div>
+                        <div class="card-header border-bottom">
+                            <h3 class="card-title">ShipAI</h3>
+                            <span class="badge text-xs">Logistics SaaS</span>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <p class="text-sm">AI-powered delivery optimization and route planning designed specifically for local MSMEs and retailers.</p>
+                        </div>
+                    </div>
+                    <div class="card interactive-card">
+                        <div class="img-container card-image">
+                            <img src="assets/startup_image.png" alt="Startup Founder working">
+                            <div class="img-overlay-heavy"></div>
+                        </div>
+                        <div class="card-header border-bottom">
+                            <h3 class="card-title">Threadly</h3>
+                            <span class="badge text-xs">D2C Fashion</span>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <p class="text-sm">An affordable, sustainable fashion brand built specifically for the Gen Z demographic in Tier-2 Indian cities.</p>
+                        </div>
+                    </div>
+                    <div class="card interactive-card">
+                        <div class="img-container card-image">
+                            <img src="assets/startup_image.png" alt="Startup Founder working">
+                            <div class="img-overlay-heavy"></div>
+                        </div>
+                        <div class="card-header border-bottom">
+                            <h3 class="card-title">FarmKart</h3>
+                            <span class="badge text-xs">AgriTech</span>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <p class="text-sm">Helping farmers sell directly to consumers, eliminating middlemen through a streamlined mobile app ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investors Section -->
+        <section id="investors" class="section-spacing border-top-subtle">
+            <div class="container scroll-reveal">
+                <div class="grid-2 align-center">
+                    <div>
+                        <h2 class="section-title mb-4">Backed by Top Networks</h2>
+                        <p class="section-description mb-8">
+                            Discover venture funds, micro-VCs, and angel networks actively looking for their next investment on Karo Pitch.
+                        </p>
+                        <div class="logo-placeholder-grid justify-start">
+                            <div class="logo-box">VC Network 1</div>
+                            <div class="logo-box">Angel Fund 2</div>
+                        </div>
+                    </div>
+                    <div class="img-container" style="height: 350px;">
+                        <img src="assets/investors_image.png" alt="Investors Meeting">
+                        <div class="img-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-spacing mb-8">
+            <div class="container">
+                <div class="grid-2 align-center scroll-reveal">
+                    <div class="cta-box text-left" style="height: 100%;">
+                        <h2 class="section-title">Ready to Pitch Your Startup?</h2>
+                        <p class="section-description mt-2 mb-6">
+                            Join India's premium startup discovery platform today to get noticed by the right investors.
+                        </p>
+                        <a href="#apply" class="btn btn-primary btn-large glow-hover">Submit Your Pitch</a>
+                    </div>
+                    <div class="img-container" style="height: 100%; min-height: 400px;">
+                        <img src="assets/cta_image.png" alt="Ambitious Founder">
+                        <div class="img-overlay-heavy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="logo-text">Karo Pitch</span>
+                <p class="text-xs text-muted mt-2">Connecting founders with capital.</p>
+            </div>
+            <div class="footer-links-row">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="app.js" defer></script>
+</body>
+</html>
